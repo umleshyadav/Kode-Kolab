@@ -154,7 +154,7 @@ Kode-Kolab/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/Kode-Kolab.git
+git clone https://github.com/umleshyadav/Kode-Kolab.git
 cd Kode-Kolab
 ```
 
