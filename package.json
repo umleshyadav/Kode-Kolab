@@ -1,0 +1,23 @@
+{
+  "name": "kode-kolab",
+  "version": "1.0.0",
+  "description": "High-performance collaborative coding platform with real-time code editor, execution engine, chat, and whiteboard",
+  "scripts": {
+    "install:all": "npm --prefix Kode-Kolab-backend install && npm --prefix Kode-Kolab-Frontend install",
+    "server": "npm --prefix Kode-Kolab-backend start",
+    "server:dev": "npm --prefix Kode-Kolab-backend run dev",
+    "client": "npm --prefix Kode-Kolab-Frontend run dev",
+    "client:build": "npm --prefix Kode-Kolab-Frontend run build"
+  },
+  "keywords": [
+    "react",
+    "nodejs",
+    "socket.io",
+    "codemirror",
+    "tldraw",
+    "piston-api",
+    "collaborative-editor"
+  ],
+  "author": "",
+  "license": "ISC"
+}
