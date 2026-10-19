@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "High-performance collaborative coding platform with real-time code editor, execution engine, chat, and whiteboard",
   "scripts": {
-    "install:all": "npm --prefix Kode-Kolab-backend install && npm --prefix Kode-Kolab-Frontend install",
-    "server": "npm --prefix Kode-Kolab-backend start",
-    "server:dev": "npm --prefix Kode-Kolab-backend run dev",
-    "client": "npm --prefix Kode-Kolab-Frontend run dev",
-    "client:build": "npm --prefix Kode-Kolab-Frontend run build"
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "server": "npm --prefix backend start",
+    "server:dev": "npm --prefix backend run dev",
+    "client": "npm --prefix frontend run dev",
+    "client:build": "npm --prefix frontend run build"
   },
   "keywords": [
     "react",
@@ -15,9 +15,8 @@
     "socket.io",
     "codemirror",
     "tldraw",
-    "piston-api",
     "collaborative-editor"
   ],
-  "author": "",
+  "author": "Umlesh Yadav",
   "license": "ISC"
 }

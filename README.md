@@ -27,13 +27,15 @@
 
 ```text
 Kode-Kolab/
-├── Kode-Kolab-backend/       # Node.js + Express + Socket.IO server
+├── backend/                  # Node.js + Express + Socket.IO server
 │   ├── server.js             # WebSocket connection management & event broadcasting
-│   ├── utils/actions.js      # Centralized action constants
+│   ├── utils/
+│   │   ├── actions.js        # Centralized action constants
+│   │   └── executor.js       # Multi-language code execution engine
 │   ├── package.json
 │   └── .env.example
 │
-├── Kode-Kolab-Frontend/      # React 18 + Vite + TailwindCSS client
+├── frontend/                 # React 18 + Vite + TailwindCSS client
 │   ├── src/
 │   │   ├── components/       # Editor, Sidebar, Chats, Drawing, FileSystem, Forms
 │   │   ├── context/          # AppContext, SocketContext, FileContext, ChatContext, RunCodeContext
@@ -42,6 +44,7 @@ Kode-Kolab/
 │   │   └── pages/            # HomePage (room join/create) and EditorPage (main workspace)
 │   ├── package.json
 │   └── .env.example
+├── package.json              # Monorepo scripts
 └── README.md
 ```
 
@@ -49,7 +52,7 @@ Kode-Kolab/
 
 - **Frontend**: React 18, Vite, TailwindCSS, CodeMirror 6 (`@uiw/react-codemirror`), `tldraw`, `react-split`, `react-hot-toast`, `react-icons`, `jszip`, `file-saver`.
 - **Backend**: Node.js, Express.js, Socket.IO, CORS, dotenv.
-- **Execution Engine**: Piston Execution Engine API (`https://emkc.org/api/v2/piston`).
+- **Execution Engine**: Native multi-language sandbox executor (Node.js, Python, C++, Java) with Piston API compatibility.
 
 ---
 
@@ -69,7 +72,7 @@ cd Kode-Kolab
 
 ### 2. Install Dependencies
 
-You can install all dependencies from the root directory:
+You can install all dependencies with a single command from root:
 
 ```bash
 npm run install:all
@@ -79,22 +82,22 @@ Or install individually:
 
 ```bash
 # Backend
-cd Kode-Kolab-backend
+cd backend
 npm install
 
 # Frontend
-cd ../Kode-Kolab-Frontend
+cd ../frontend
 npm install
 ```
 
 ### 3. Environment Configuration
 
-#### Backend (`Kode-Kolab-backend/.env`):
+#### Backend (`backend/.env`):
 ```env
 PORT=3000
 ```
 
-#### Frontend (`Kode-Kolab-Frontend/.env`):
+#### Frontend (`frontend/.env`):
 ```env
 # Point to your local backend server
 VITE_API_BACKEND_URL=http://localhost:3000
@@ -102,18 +105,30 @@ VITE_API_BACKEND_URL=http://localhost:3000
 
 ### 4. Running the Application
 
-In two separate terminals:
+**Option A — From the root directory (Two terminals):**
 
-**Terminal 1 — Backend:**
+Terminal 1:
 ```bash
-cd Kode-Kolab-backend
+npm run server
+```
+
+Terminal 2:
+```bash
+npm run client
+```
+
+**Option B — Individually:**
+
+Terminal 1:
+```bash
+cd backend
 npm run dev
 # Server runs on http://localhost:3000
 ```
 
-**Terminal 2 — Frontend:**
+Terminal 2:
 ```bash
-cd Kode-Kolab-Frontend
+cd frontend
 npm run dev
 # Vite runs on http://localhost:5173
 ```
